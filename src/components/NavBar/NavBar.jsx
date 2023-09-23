@@ -27,7 +27,7 @@ const NavBar = () => {
             </Box>
             <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                 {navArrayLinks.map((item) => (
-                    <Button sx={{ color: '#FFF' }} component={NavLink} to={item.path} key={item.title} >{item.title}</Button>
+                    <Button startIcon={item.icon} sx={{ color: '#FFF' }} component={NavLink} to={item.path} key={item.title} >{item.title}</Button>
                 ))}
             </Box>
 

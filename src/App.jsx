@@ -1,8 +1,10 @@
-import { Box } from "@mui/material"
-import { Route, Routes } from "react-router-dom"
-import ProfilePage from "./pages/ProfilePage"
-import NavBar from "./components/NavBar/NavBar"
-import { CFProvider } from "./components/Context/AppContext"
+import { Box } from '@mui/material'
+import { Route, Routes } from 'react-router-dom'
+import { CFProvider } from './components/Context/AppContext'
+import NavBar from './components/NavBar/NavBar'
+import ProfileLayout from './pages/ProfileLayout'
+import BetsLayout from './pages/BetsLayout'
+import FinanceLayout from './pages/FinanceLayout'
 
 function App() {
 
@@ -20,13 +22,19 @@ function App() {
 
           }}
             component='header'>
-            <Box component='img' src="https://callingfriends.com/assets/main.webp" width='9rem' />
+            <Box component='img' src='https://callingfriends.com/assets/main.webp' width='9rem' />
             <NavBar />
           </Box>
-
-          <Routes>
-            <Route path="/profile" element={<ProfilePage />} />
-          </Routes>
+          <Box sx={{
+            maxWidth: 1151,
+            m: 'auto'
+          }}>
+            <Routes>
+              <Route exact path='/profile' element={<ProfileLayout />} />
+              <Route exact path='/profile/bets' element={<BetsLayout />} />
+              <Route exact path='/profile/finance' element={<FinanceLayout />} />
+            </Routes>
+          </Box>
         </Box>
       </CFProvider>
     </>

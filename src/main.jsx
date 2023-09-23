@@ -2,6 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 import App from './App.jsx'
 
 const pallete = createTheme({
@@ -11,7 +15,7 @@ const pallete = createTheme({
       main: '#169AD7',
     },
     secondary: {
-      main: '#D7D7D7',
+      main: '#F58220',
     },
   },
 })
