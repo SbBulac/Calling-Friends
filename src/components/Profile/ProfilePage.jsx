@@ -37,8 +37,8 @@ const ProfilePage = () => {
                         alignItems: 'center',
                         gap: 1,
                         position: 'absolute',
-                        bottom: -10,
-                        left: { xs: 20, sm: 38 }
+                        bottom: { xs: -10, lg: -40 },
+                        left: { xs: 20, sm: 38, lg: 100 }
                     }}>
                         {/* Avatar del Usuario */}
                         <Box
@@ -48,7 +48,7 @@ const ProfilePage = () => {
                                 borderRadius: '100%',
                                 border: 4,
                                 borderColor: '#FFF',
-                                width: { xs: 135, sm: 205 },
+                                width: { xs: 135, sm: 205, lg: 190 },
                             }}
                         />
                         {/* Actualizador de avatar */}

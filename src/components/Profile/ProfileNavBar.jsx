@@ -19,7 +19,9 @@ const ProfileNavBar = () => {
             height: 63,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-around'
+            justifyContent: { xs: 'space-around', lg: 'flex-end' },
+            gap: { lg: 10 },
+            pr: { lg: 5 }
         }}>
             {navProfileArrayLinks.map((item) => (
                 <Button startIcon={item.icon} sx={{ color: '#FFF' }} component={NavLink} to={item.path} key={item.title} >{item.title}</Button>
