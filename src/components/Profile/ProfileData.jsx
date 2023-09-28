@@ -1,9 +1,10 @@
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Alert, Box, Button, Grid, Snackbar, Typography } from '@mui/material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import React from 'react'
+import React, { useState } from 'react'
 import PopularBets from './PopularBets';
 
 const ProfileData = () => {
+    const [open, setOpen] = useState(false)
     return (
         <Grid container sx={{
             px: 2.5,
@@ -32,29 +33,42 @@ const ProfileData = () => {
                         flexDirection: 'column',
                         gap: 1.5
                     }}>
-                        {/* Link */}
-                        <Typography
-                            component='a'
-                            color='primary'
-                            sx={{
-                                fontSize: 22,
-                                fontWeight: 'bold'
-                            }}>
-                            http://localhost:5173/profile
-                        </Typography>
-                        {/* Boton de copiar */}
-                        <Button
-                            variant='contained'
-                            color='secondary'
-                            startIcon={<ContentCopyIcon />}
-                            sx={{
-                                borderRadius: 15,
-                                color: '#fff',
-                                textTransform: 'none',
-                                width: 110
-                            }}>
-                            Copiar
-                        </Button>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: { xs: 'column', lg: 'row' },
+                            gap: { lg: 2 }
+                        }}>
+                            {/* Link */}
+                            <Typography
+                                component='a'
+                                color='primary'
+                                sx={{
+                                    fontSize: 22,
+                                    fontWeight: 'bold'
+                                }}>
+                                http://localhost:5173/profile
+                            </Typography>
+                            {/* Boton de copiar */}
+                            <Button
+                                onClick={() => setOpen(true)}
+                                variant='contained'
+                                color='secondary'
+                                startIcon={<ContentCopyIcon />}
+                                sx={{
+                                    borderRadius: 15,
+                                    color: '#fff',
+                                    textTransform: 'none',
+                                    width: 110
+                                }}>
+
+                                Copiar
+                            </Button>
+                            <Snackbar open={open} autoHideDuration={1000} onClose={() => setOpen(false)} >
+                                <Alert severity="success" sx={{ width: '20rem' }}>
+                                    Copiado!
+                                </Alert>
+                            </Snackbar>
+                        </Box>
                         <Typography variant="p">Copia tu link personal y comparte en tu red social para ganar dinero más rápido.</Typography>
                     </Box>
                     {/* Informacion Personal */}

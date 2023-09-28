@@ -13,6 +13,7 @@ const PopularBets = () => {
                 <CardMedia
                     sx={{ width: 80, borderRadius: '100%' }}
                     component='img'
+                    alt='avatar del usuario'
                     src='https://callingfriends.com/assets/Images/Default_icon_profile.webp' />
                 <Box sx={{
                     display: 'flex',
